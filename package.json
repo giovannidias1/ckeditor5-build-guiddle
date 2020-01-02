@@ -1,5 +1,5 @@
 {
-  "name": "@ckeditor/ckeditor5-build-decoupled-document",
+  "name": "ckeditor/ckeditor5-build-guiddle",
   "version": "16.0.0",
   "description": "The document editor build of CKEditor 5 – the best browser-based rich text editor.",
   "keywords": [
@@ -18,7 +18,8 @@
     "collaboration",
     "collaborative",
     "real-time",
-    "framework"
+	"framework",
+	"guiddle"
   ],
   "main": "./build/ckeditor.js",
   "files": [
@@ -66,7 +67,7 @@
     "node": ">=8.0.0",
     "npm": ">=5.7.1"
   },
-  "author": "CKSource (http://cksource.com/)",
+  "author": "CKSource (http://cksource.com/), Build By Giovanni Dias",
   "license": "GPL-2.0-or-later",
   "homepage": "https://ckeditor.com/ckeditor-5",
   "bugs": "https://github.com/ckeditor/ckeditor5/issues",
