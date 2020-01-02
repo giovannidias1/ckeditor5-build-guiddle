@@ -73,6 +73,50 @@ DecoupledEditor
 ```
 
 **Note:** If you are planning to integrate CKEditor 5 deep into your application, it is actually more convenient and recommended to install and import the source modules directly (like it happens in `ckeditor.js`). Read more in the [Advanced setup guide](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/advanced-setup.html).
+## CKEditor5 Custom build
+O CKEditor custom é o editor de texto do projeto e esta presente em todas as partes do curso entre descrição, lições e quiz. Usamos o [ckeditor-decoupled](https://github.com/ckeditor/ckeditor5-build-decoupled-document) como base
+### Get started
+
+ 1.  Mudar o local da pasta raiz
+    	 - `cd libs/ckeditor5`
+
+ 2. Instalar dependências NPM
+        	 - execute `npm install`
+
+Após isso o projeto está pronto para receber um plugin que poderá ser encontrados [aqui](https://www.npmjs.com/search?q=ckeditor5) ou [aqui](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/development/plugins.html)
+
+### Instalando Plugins
+
+ 1. Execute `npm i my-custom-plugin --save`
+ 2. Edite o arquivo que está localizado em `src/ckeditor.js`
+	 2.1 Importe o o plugin no inicio do arquivo e abaixo dos demais imports
+
+    	 import  CustomPlugin from  '@ckeditor/CustomPlugin/src/CustomPlugin'; <-- adicione isso
+	2.2 Adicione o plugin em `DecoupledEditor.builtinPlugins = [..., CustomPlugin]`
+	2.3 por fim adicione ele na toolbar em:
+
+	    DecoupledEditor.defaultConfig = {
+		    toolbar: {
+				  items: [
+						[...]
+						'CustomPlugin'
+				]
+			}
+### Instalando o Yarn para gerar a build
+Entre no [site](https://yarnpkg.com/en/docs/install#windows-stable) do Yarn escolha a versão compatível com seu sistema e instale-a.
+
+### Gerando a build
+Na raiz do projeto execute `yarn run build`
+
+### Instalando o a build custom no WebApplication
+
+ 1. Copie o conteúdo gerado pela build na basta `libs/ckeditor5/build`
+ 2. Cole em `WebApplication/src/assets/javascripts/ck-editor-custom`
+
+### Referências
+[https://github.com/ckeditor/ckeditor5-media-embed/blob/master/src/mediaembedediting.js](https://github.com/ckeditor/ckeditor5-media-embed/blob/master/src/mediaembedediting.js)
+[https://ckeditor.com/docs/ckeditor5/latest/api/module_media-embed_mediaembed-MediaEmbedConfig.html#member-previewsInData](https://ckeditor.com/docs/ckeditor5/latest/api/module_media-embed_mediaembed-MediaEmbedConfig.html#member-previewsInData)
+[https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html](https://ckeditor.com/docs/ckeditor5/latest/builds/guides/integration/installing-plugins.html)
 
 ## License
 
