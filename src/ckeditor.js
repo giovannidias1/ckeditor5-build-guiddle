@@ -134,6 +134,24 @@ GuiddleEditor.defaultConfig = {
 			'mergeTableCells'
 		]
 	},
+	fontSize: {
+		options: [
+			10,
+			11,
+			12,
+			13,
+			14,
+			'default',
+			18,
+			20,
+			22,
+			24,
+			26,
+			28,
+			36,
+
+		]
+	},
 	mediaEmbed: {
 		// This value must be kept in sync with the language defined in webpack.config.js.
 		language: 'en',
